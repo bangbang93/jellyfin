@@ -5,7 +5,7 @@ RUN git clone https://github.com/joshuaboniface/rffmpeg --depth 1 .
 
 FROM jellyfin/jellyfin
 
-RUN apt-get update && apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra python3-yaml python3-click && \
+RUN apt-get update && apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra python3-yaml python3-click openssh-client && \
   apt clean && \
   rm -rf /var/lib/apt/lists/*
 
