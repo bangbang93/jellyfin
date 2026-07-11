@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra pyt
 
 COPY --from=git /rffmpeg/rffmpeg /usr/local/bin/rffmpeg
 COPY --from=git /rffmpeg/rffmpeg.yml.sample /etc/rffmpeg/rffmpeg.yml.sample
+COPY 10-jellyfin-config-fonts.conf /etc/fonts/conf.d/10-jellyfin-config-fonts.conf
 RUN chmod +x /usr/local/bin/rffmpeg && \
   ln -s /usr/local/bin/rffmpeg /usr/local/bin/ffmpeg && \
   ln -s /usr/local/bin/rffmpeg /usr/local/bin/ffprobe && \
